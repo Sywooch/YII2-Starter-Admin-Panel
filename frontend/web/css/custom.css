@@ -1,0 +1,150 @@
+#footer .widgets_row .footer_logo a img{
+width:280px;
+}
+
+#footer .widgets_row .footer_logo a img {
+    height: 98px;
+}
+.wpb_animate_when_almost_visible {
+    opacity: 1;
+}
+
+
+.page_title {
+    background-repeat: repeat !important;
+}
+
+.vc_custom_1452504298195 {
+    padding-top: 46px !important;
+    padding-right: 50px !important;
+    padding-bottom: 46px !important;
+    padding-left: 50px !important;
+}
+
+.wpcf7-form .wpcf7-submit {
+    color: #fff;
+    border-color: #002e5b;
+    background: #002e5b;
+    border-width: 3px;
+    font-weight: BOLD;
+    text-transform: uppercase;
+    float: right;
+    width: Auto;
+}
+
+#wpcf7-f1090-p989-o1 p:empty {
+    display: none;
+}
+
+#wpcf7-f1090-p989-o1 p:empty {
+    display: none;
+}
+
+#wpcf7-f1090-p989-o1 .field {
+    margin: 0 0 15px;
+}
+
+body.home .wpcf7-form .wpcf7-submit {
+    color: #000000;
+    border-color: #002e5b;
+    background: #e2c911;
+    border-width: 3px;
+    font-weight: bold;
+    text-transform: uppercase;
+    float: none;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.post_bottom.media {
+    display: none;
+}
+
+.footer_logo {
+    display: none !important
+}
+
+.top_nav_wr .top_nav .logo a img {
+    height: 120px;
+}
+
+.header_top .logo a {
+    margin-top: 15px;
+}
+
+.btn-custom:hover, .btn:focus, .btn.focus {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    background-color: #024f9a !important;
+}
+
+.btn-custom{
+    color: #FFFFFF !important;
+    background-color: #002e5b !important;
+}
+
+.th-custom{
+    text-align: right !important;
+}
+
+.jssorb03 {
+    position: absolute;
+}
+.jssorb03 div, .jssorb03 div:hover, .jssorb03 .av {
+    position: absolute;
+    /* size of bullet elment */
+    width: 21px;
+    height: 21px;
+    text-align: center;
+    line-height: 21px;
+    color: white;
+    font-size: 12px;
+    background: url('../img/b03.png') no-repeat;
+    overflow: hidden;
+    cursor: pointer;
+}
+.jssorb03 div { background-position: -5px -4px; }
+.jssorb03 div:hover, .jssorb03 .av:hover { background-position: -35px -4px; }
+.jssorb03 .av { background-position: -65px -4px; }
+.jssorb03 .dn, .jssorb03 .dn:hover { background-position: -95px -4px; }
+
+/* jssor slider arrow navigator skin 03 css */
+/*
+.jssora03l                  (normal)
+.jssora03r                  (normal)
+.jssora03l:hover            (normal mouseover)
+.jssora03r:hover            (normal mouseover)
+.jssora03l.jssora03ldn      (mousedown)
+.jssora03r.jssora03rdn      (mousedown)
+.jssora03l.jssora03ldn      (disabled)
+.jssora03r.jssora03rdn      (disabled)
+*/
+.jssora03l, .jssora03r {
+    display: block;
+    position: absolute;
+    /* size of arrow element */
+    width: 55px;
+    height: 55px;
+    cursor: pointer;
+    background: url('../img/a03.png') no-repeat;
+    overflow: hidden;
+}
+.jssora03l { background-position: -3px -33px; }
+.jssora03r { background-position: -63px -33px; }
+.jssora03l:hover { background-position: -123px -33px; }
+.jssora03r:hover { background-position: -183px -33px; }
+.jssora03l.jssora03ldn { background-position: -243px -33px; }
+.jssora03r.jssora03rdn { background-position: -303px -33px; }
+.jssora03l.jssora03lds { background-position: -3px -33px; opacity: .3; pointer-events: none; }
+.jssora03r.jssora03rds { background-position: -63px -33px; opacity: .3; pointer-events: none; }
+
+span.stars, span.stars span {
+    display: block;
+    background: url('../img/stars.png') 0 -16px repeat-x;
+    width: 80px;
+    height: 16px;
+}
+
+span.stars span {
+    background-position: 0 0;
+}

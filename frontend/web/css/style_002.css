@@ -1,0 +1,80 @@
+/*
+    Template: consulting
+    Theme Name: Consulting Child Theme
+    Theme URI: http://consulting.stylemixthemes.com/
+    Author: StylemixThemes
+    Author URI: http://stylemixthemes.com/
+    Description: Consulting - Business and Finance WordPress theme. Using Consluting you can easily create a modern website with real content. Easily edit the real content and compose the page layout with drag & drop page builder Consulting is the best ever finance, consulting, brokerage WordPress theme. It’s fully Responsive and Easy to Customize using intuitive Drag & Drop Visual Composer and Theme Options panel in WordPress Customizer.
+    Version: 1.1
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: blue, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, sticky-post, translation-ready
+    Text Domain: consulting-child-theme
+*/
+
+
+.home.page .info_box.style_3 .info_box_text { position: relative; top: 0; background: #fff; }
+.home.page .info_box.style_3 .info_box_text .title h6 { color: #000;  }
+.home.page .info_box.style_3 .info_box_text p { color: #000; padding-left: 0; }
+.home.page .info_box.style_3 .info_box_text .read_more { display: none; }
+
+
+.home.page .icon_box.style_1.hexagon.hexanog_animation h5 {
+    line-height: 3rem;
+}
+
+.home.page .icon_box.style_1.hexagon.hexanog_animation:hover .icon {
+    padding: 0px 0;
+}
+.icon_box.style_1.hexagon.hexanog_animation:hover .icon:after { }
+.icon_box.style_1.hexagon.hexanog_animation:hover .icon:before { height:0; }
+
+.home.page .icon_box.style_1.hexagon.hexanog_animation .icon:before { top: -12px; }
+.home.page .icon_box.style_1.hexagon.hexanog_animation .icon:after { bottom: -12px; }
+
+.team-holder { clear:both }  
+.team-holder img { width:200px;  }
+
+figure.featured-thumbnail {
+    position: relative;
+    float: left;
+    overflow: hidden;
+    margin: 5px 20px 10px 0;
+}
+
+body .vc_general.vc_btn3 { text-transform: capitalize; }
+body.header_style_2 .header_top {
+    background: rgba(255, 255, 255, 0.78) !important;
+}
+.consulting-rev-title ,
+.consulting-rev-title mark { color:inherit !important;  }
+
+.consulting-rev-title {  font-size:inherit!important; }
+
+
+
+@media(max-width:767px){
+
+
+.logo a img {
+    max-width: 252px !important;
+    height: auto !important;
+}
+
+.mobile_header .logo_wrapper {
+    position: relative;
+    background: #fff;
+    padding: 5px 15px 15px 10px !important;
+}
+/*
+.mobile_header .header_info {
+ display:none;
+} */
+#menu_toggle {
+    margin: 32px 0 0 !important;
+}
+
+
+
+}
+/*.small-slider-text { font-size:15px !important; } */
