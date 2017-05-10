@@ -164,14 +164,14 @@ class CommonFunctions extends Component
         if(!is_dir($uploadpath)){
             mkdir($uploadpath,0777);
         }
-        $userpath = $uploadpath.$id.DIRECTORY_SEPARATOR;
+        $userpath = $uploadpath.DIRECTORY_SEPARATOR.$id.DIRECTORY_SEPARATOR;
         if(!is_dir($userpath)){
             mkdir($userpath,0777);
         }
 
 
-        if(imagepng($img,$uploadpath.$imageName)){
-          $media =  $this->uploadMedia($id,$uploadpath,$imageName);
+        if(imagepng($img,$userpath.$imageName)){
+          $media =  $this->uploadMedia($id,$userpath,$imageName);
             $this->updateProfilePic($id,$media->id);
         }
 

@@ -36,6 +36,7 @@ return [
             'backend/web/assets',
             'frontend/runtime',
             'frontend/web/assets',
+            'backend/web/uploads',
         ],
         'setExecutable' => [
             'yii',
