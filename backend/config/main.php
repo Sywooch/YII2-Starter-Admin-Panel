@@ -6,7 +6,7 @@ $params = array_merge(
     require(__DIR__ . '/params-local.php')
 );
 use \yii\web\Request;
-$baseUrl = str_replace('/backend/web', '/backend/', (new Request)->getBaseUrl());
+$baseUrl = str_replace('/backend/web', '/backend', (new Request)->getBaseUrl());
 return [
     'id' => 'app-backend',
     'basePath' => dirname(__DIR__),
@@ -36,21 +36,8 @@ return [
             'class' => 'backend\components\CommonFunctions',
 
         ],
-        'email' => [
-
-            'class' => 'backend\components\Email',
-
-        ],
-        'fax' => [
-
-            'class' => 'backend\components\Fax',
-
-        ],
         'Notify' => [
             'class' => 'backend\components\notify\Notification',
-        ],
-        'userActivity' => [
-                'class' => 'backend\components\Activity',
         ],
         'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
@@ -78,10 +65,6 @@ return [
             'enableStrictParsing' => false,
             'baseUrl' => $baseUrl,
             'rules' => [
-                'app-user/open-modal/<client_id:\d+>' => 'app-user/open-modal',
-                'app-user/add-user/<client_id:\d+>' => 'app-user/add-user',
-                'app-user/view/<client_id:\d+>/<id:\d+>' => 'app-user/view',
-                'app-user/edit/<client_id:\d+>/<id:\d+>' => 'app-user/edit',
                 '<controller>/<action>/<id:\d+>' => '<controller>/<action>',
                 'dashboard' => 'dashboard/index',
             ],

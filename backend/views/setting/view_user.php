@@ -33,8 +33,16 @@
                     <div class="image-upload-container profile-user-photo-container"
                          style="width: 140px; height: 140px;">
                         <a href="javascript:void(0);">
+                            <?php
+                                if(!empty($model->profile->media)){
+
+                                }else{
+                                    $media = Yii::$app->homeUrl."/default_image/default_user.jpg";
+
+                                }
+                            ?>
                             <img class="img-rounded profile-user-photo" id="user-profile-image"
-                                 src="<?=DEFAULT_IMAGE;?>"
+                                 src="<?=Yii::$app->commonfunction->getUserProfilePic($model->id);?>"
                                  data-src="holder.js/140x140" alt="140x140" style="width: 140px; height: 140px;">
                         </a>
                     </div>

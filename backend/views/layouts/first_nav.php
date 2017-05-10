@@ -13,7 +13,7 @@
                         </div>
 
                         <img id="user-account-image" class="img-rounded"
-                             src="<?= Yii::$app->homeUrl; ?>/default_image/default_user.jpg"
+                             src="<?=Yii::$app->commonfunction->getProfilePic();?>"
                              height="32" width="32" alt="32x32" data-src="holder.js/32x32"
                              style="width: 32px; height: 32px;"/>
 

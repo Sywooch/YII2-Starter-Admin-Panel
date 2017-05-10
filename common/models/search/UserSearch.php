@@ -41,7 +41,7 @@ class UserSearch extends User
      */
     public function search($params)
     {
-        $query = User::find()->where(['in','role_id',[SUPER_ADMIN,ADMIN,RESERVATIONIST,ACCOUNTANT]]);
+        $query = User::find()->where(['in','role_id',[SUPER_ADMIN,ADMIN]]);
         // add conditions that should always apply here
 
         $dataProvider = new ActiveDataProvider([

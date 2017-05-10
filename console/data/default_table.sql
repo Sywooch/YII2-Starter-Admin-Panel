@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: :3306
--- Generation Time: May 10, 2017 at 01:43 PM
+-- Generation Time: May 10, 2017 at 05:07 PM
 -- Server version: 5.7.18-0ubuntu0.16.04.1
 -- PHP Version: 5.6.30-10+deb.sury.org~xenial+2
 
@@ -33,7 +33,7 @@ CREATE TABLE IF NOT EXISTS `actions` (
   `slug` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   KEY `controller_id` (`controller_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=36 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=42 ;
 
 --
 -- Dumping data for table `actions`
@@ -74,7 +74,13 @@ INSERT INTO `actions` (`id`, `controller_id`, `action_name`, `slug`) VALUES
 (32, 4, 'forgot-password', 'Forgot Password'),
 (33, 4, 'lock', 'Lock'),
 (34, 4, 'logout', 'Logout'),
-(35, 4, 'reset', 'Reset');
+(35, 4, 'reset', 'Reset'),
+(36, 4, 'get-controllers-and-actions-sync', 'Get Controllers And Actions Sync'),
+(37, 5, 'register', 'Register'),
+(38, 5, 'profile', 'Profile'),
+(39, 5, 'edit-profile', 'Edit Profile'),
+(40, 5, 'change-password', 'Change Password'),
+(41, 5, 'toggle-status', 'Toggle Status');
 
 -- --------------------------------------------------------
 
@@ -102,16 +108,7 @@ CREATE TABLE IF NOT EXISTS `app_user_profile` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `id` (`id`),
   KEY `profile_media_id` (`media_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 COMMENT='Profile Table' AUTO_INCREMENT=11 ;
-
---
--- Dumping data for table `app_user_profile`
---
-
-INSERT INTO `app_user_profile` (`id`, `first_name`, `last_name`, `full_name`, `media_id`, `email`, `gender`, `phone_no`, `date_of_birth`, `is_app_user`, `status`, `is_deleted`, `created_by`, `created_date`, `updated_by`, `updated_date`) VALUES
-(5, ' admin', 'admin', 'admin admin', NULL, 'admin@admin.com', 1, NULL, NULL, 1, 1, 0, 1, 1494322633, 1, 1494340727),
-(9, ' Axay', 'sangani', ' Axay sangani', NULL, 'akshay@gmail.com', 1, '(886) 621-0288', '1995-04-30', 1, 1, 0, 1, 1494337122, 1, 1494340930),
-(10, 'Mohit', 'Gurjar', 'Mohit Gurjar', NULL, 'mohit@gmail.com', 0, '(886) 621-0288', NULL, 1, 1, 0, 1, 1494337212, 1, 1494337212);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 COMMENT='Profile Table' AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -124,7 +121,7 @@ CREATE TABLE IF NOT EXISTS `controllers` (
   `controller_name` varchar(100) NOT NULL,
   `slug` varchar(100) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=6 ;
 
 --
 -- Dumping data for table `controllers`
@@ -134,7 +131,8 @@ INSERT INTO `controllers` (`id`, `controller_name`, `slug`) VALUES
 (1, 'cropfile', 'Cropfile'),
 (2, 'dashboard', 'Dashboard'),
 (3, 'setting', 'Setting'),
-(4, 'site', 'Site');
+(4, 'site', 'Site'),
+(5, 'user', 'User');
 
 -- --------------------------------------------------------
 
@@ -237,17 +235,7 @@ CREATE TABLE IF NOT EXISTS `rights` (
   KEY `controller_id` (`controller_id`,`action_id`),
   KEY `role_id` (`role_id`),
   KEY `action_id` (`action_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `rights`
---
-
-INSERT INTO `rights` (`id`, `role_id`, `controller_id`, `action_id`) VALUES
-(1, 2, 1, 1),
-(2, 2, 1, 2),
-(3, 2, 1, 3),
-(4, 2, 2, 4);
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -335,16 +323,7 @@ CREATE TABLE IF NOT EXISTS `user` (
   PRIMARY KEY (`id`),
   KEY `role` (`role_id`),
   KEY `profile_id` (`profile_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=5 ;
-
---
--- Dumping data for table `user`
---
-
-INSERT INTO `user` (`id`, `username`, `first_name`, `last_name`, `email`, `auth_key`, `password_hash`, `profile_id`, `password_reset_token`, `role_id`, `screenlock`, `status`, `created_at`, `updated_at`) VALUES
-(1, 'admin@admin.com', 'admin', 'admin', 'admin@admin.com', 'O59HQm0p3j5nWapVQP-OdocHa6fUTZb4', '$2y$13$4rv/U4jBsMb38QTItY0CtuAA.5WHBDRcEWvA7nAC6fgmxnArrQZ26', 5, NULL, 1, 0, 1, 1494322634, 1494322634),
-(3, 'akshay@gmail.com', ' Axay', 'sangani', 'akshay@gmail.com', 'zQw3kLf30v1dqZWwoL7LWQTjGi7iUK-x', '$2y$13$MEgyrk..HDUn0pE1pxDP4ux2EREVd8COzBaHUy6fykjhCif4JPB7u', 9, NULL, 2, 0, 1, 1494337123, 1494340930),
-(4, 'mohit@gmail.com', 'Mohit', 'Gurjar', 'mohit@gmail.com', 'cND97e7v0J17AWR600QyQR8_gsnkPChC', '$2y$13$Es/FiNwmVqfVqwk0l6Kadeb7ojRhKkB9yh6Erv2UstaJ.6l0biOYK', 10, 'obzSXuPftwU-vTuV1wAyZUxua37KrEQE_1494337213', 2, 0, 1, 1494337213, 1494340383);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
 
 --
 -- Constraints for dumped tables

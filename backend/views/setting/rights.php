@@ -66,32 +66,44 @@ use yii\widgets\Pjax;
                                         <tbody>
                                         <tr>
                                             <td>
-                                                <?php foreach($controllers  as $controller):?>
-                                                    <table style="border: none;" class="table table-responsive">
-                                                        <thead>
-                                                        <tr>
-                                                            <th><span style="font-size: large; font-weight: bold"><?=$controller->slug?></span></th>
-                                                            <th class="text-right" style="width: 50%"><input type="checkbox" id="<?=$controller->controller_name?>" class="flat"> ( Select All )</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                        <tr>
-                                                            <td colspan="2">
-                                                                <?php foreach($controller->actions  as $action):?>
-                                                                    <div class="col-md-3" style="padding: 5px;">
-                                                                        <div class="col-md-10 text-left"><?=$action->slug?></div>
-                                                                        <div class="col-md-2 text-right"><input type="checkbox" <?= (Yii::$app->commonfunction->ifChecked($roleData,['role'=> isset($id)?$id:"",'controller'=>$controller->id,'action'=>$action->id]))?"checked":""; ?> name="right[<?=isset($id)?$id."_".$controller->id."_".$action->id:""."_".$controller->id."_".$action->id?>]" class="flat <?=$controller->controller_name?>"></div>
-                                                                    </div>
-                                                                <?php endforeach;?>
-                                                            </td>
-                                                        </tr>
-                                                        </tbody>
-                                                    </table>
-                                                    <?php $this->registerJs ("
+                                                <?php foreach($controllers  as $controller) {
+                                                    if ($controller->controller_name != "site") {
+                                                        ?>
+                                                        <table style="border: none;" class="table table-responsive">
+                                                            <thead>
+                                                            <tr>
+                                                                <th>
+                                                                    <span style="font-size: large; font-weight: bold"><?= $controller->slug ?></span>
+                                                                </th>
+                                                                <th class="text-right" style="width: 50%"><input
+                                                                            type="checkbox"
+                                                                            id="<?= $controller->controller_name ?>"
+                                                                            class="flat"> ( Select All )
+                                                                </th>
+                                                            </tr>
+                                                            </thead>
+                                                            <tbody>
+                                                            <tr>
+                                                                <td colspan="2">
+                                                                    <?php foreach ($controller->actions as $action): ?>
+                                                                        <div class="col-md-3" style="padding: 5px;">
+                                                                            <div class="col-md-10 text-left"><?= $action->slug ?></div>
+                                                                            <div class="col-md-2 text-right"><input
+                                                                                        type="checkbox" <?= (Yii::$app->commonfunction->ifChecked($roleData, ['role' => isset($id) ? $id : "", 'controller' => $controller->id, 'action' => $action->id])) ? "checked" : ""; ?>
+                                                                                        name="right[<?= isset($id) ? $id . "_" . $controller->id . "_" . $action->id : "" . "_" . $controller->id . "_" . $action->id ?>]"
+                                                                                        class="flat <?= $controller->controller_name ?>">
+                                                                            </div>
+                                                                        </div>
+                                                                    <?php endforeach; ?>
+                                                                </td>
+                                                            </tr>
+                                                            </tbody>
+                                                        </table>
+                                                        <?php $this->registerJs("
                                                         $(document).ready(function(){    
                                                          $(function () {
-                                                            var checkAll = $('input#".$controller->controller_name."');
-                                                            var checkboxes = $('input.".$controller->controller_name."');
+                                                            var checkAll = $('input#" . $controller->controller_name . "');
+                                                            var checkboxes = $('input." . $controller->controller_name . "');
                                                             var whole = $('#whole_select');
                                                                 whole.on('ifChecked ifUnchecked', function(event) {
                                                                     if (event.type == 'ifChecked') {
@@ -122,7 +134,9 @@ use yii\widgets\Pjax;
                                                             });            
                                                         });
                                                     "); ?>
-                                                <?php endforeach;?>
+                                                    <?php }
+                                                }
+                                                ?>
                                             </td>
                                             <td></td>
                                         </tr>

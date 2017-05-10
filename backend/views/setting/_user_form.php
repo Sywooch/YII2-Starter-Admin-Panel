@@ -81,7 +81,7 @@ use common\models\Media;
             <label class="control-label" for="salonform-address">Roles</label>
             <?php echo $form->field($model, 'role')->widget(
                 \kartik\select2\Select2::classname(), [
-                'data' => \yii\helpers\ArrayHelper::map(Role::find()->where(['not in','id',[SUPER_ADMIN,CLIENT,CLIENT_APP_USER]])->asArray()->all(), 'id', 'role_name'),
+                'data' => \yii\helpers\ArrayHelper::map(Role::find()->where(['not in','id',[SUPER_ADMIN]])->asArray()->all(), 'id', 'role_name'),
                 'options' => ['placeholder' => 'Select Role ...'],
             ])->label(false); ?>
         </div>

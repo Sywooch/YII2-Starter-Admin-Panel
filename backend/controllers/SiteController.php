@@ -87,6 +87,13 @@ class SiteController extends Controller
 
             $model = new LoginForm();
             if ($model->load(Yii::$app->request->post()) && $model->login()) {
+                $this->setDeviceInfo();
+                $name = strtoupper(yii::$app->user->identity->profile->first_name[0]).strtoupper(yii::$app->user->identity->profile->last_name[0]);
+                if(isset(yii::$app->user->identity->profile) && !empty(yii::$app->user->identity->profile)){
+                    if(!isset(yii::$app->user->identity->profile->media) && empty(yii::$app->user->identity->profile->media)){
+                        Yii::$app->commonfunction->createPublicProfile($name,yii::$app->user->identity->id);
+                    }
+                }
                 return $this->redirect(\Yii::$app->urlManager->createUrl("dashboard/index"));
             } else {
                 return $this->render('login', [
