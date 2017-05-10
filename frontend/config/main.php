@@ -20,18 +20,7 @@ return [
             'identityClass' => 'common\models\User',
             'enableAutoLogin' => true,
         ],
-        'commonfunction' => [
-
-            'class' => 'backend\components\CommonFunctions',
-
-        ],
-        'email' => [
-
-            'class' => 'backend\components\Email',
-
-        ],
-
-        'log' => [
+                'log' => [
             'traceLevel' => YII_DEBUG ? 3 : 0,
             'targets' => [
                 [
@@ -50,18 +39,8 @@ return [
             'rules' => [
                 'login' => 'site/login',
                 '<controller>/<action>/<id:\d+>' => '<controller>/<action>',
-                '<module>/<controller>/<action>/<id:\d+>' => '<module>/<controller>/<action>',
             ]
         ]
-    ],
-    'modules' => [
-        'webservices' => [
-            'class' => 'frontend\modules\webservices\Module',
-        ],
-       'expedia' => [
-            'class' => 'frontend\modules\expedia\Module',
-        ],
-
     ],
     'params' => $params,
 ];
