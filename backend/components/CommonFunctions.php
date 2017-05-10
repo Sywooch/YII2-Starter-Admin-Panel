@@ -160,10 +160,15 @@ class CommonFunctions extends Component
         //header( 'Content-type: image/png' );
         //imagepng($img);exit;
 
-        $uploadpath = Yii::getAlias('@backend').DIRECTORY_SEPARATOR."web".DIRECTORY_SEPARATOR."uploads".DIRECTORY_SEPARATOR.$id.DIRECTORY_SEPARATOR;
+        $uploadpath = Yii::getAlias('@backend').DIRECTORY_SEPARATOR."web".DIRECTORY_SEPARATOR."uploads".DIRECTORY_SEPARATOR;
         if(!is_dir($uploadpath)){
             mkdir($uploadpath,0777);
         }
+        $userpath = $uploadpath.$id.DIRECTORY_SEPARATOR;
+        if(!is_dir($userpath)){
+            mkdir($userpath,0777);
+        }
+
 
         if(imagepng($img,$uploadpath.$imageName)){
           $media =  $this->uploadMedia($id,$uploadpath,$imageName);
