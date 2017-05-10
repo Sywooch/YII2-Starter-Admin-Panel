@@ -838,5 +838,4 @@ class CommonFunctions extends Component
             return "Check In";
         }
     }
-
 }

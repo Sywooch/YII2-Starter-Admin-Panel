@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: rohan
- * Date: 2/7/16
- * Time: 5:28 PM
+ * User: akshay
+ * Date: 10/5/17
+ * Time: 11:30 PM
  */
 
 use yii\bootstrap\ActiveForm;
@@ -28,7 +28,11 @@ use kartik\select2\Select2;
         <div class="col-md-10">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                    <strong>Roles</strong> List <!-- check if flash message exists -->
+                    <?php  if (Yii::$app->controller->action->id == "edit-role") { ?>
+                        <strong>Roles</strong> Edit
+                    <?php } else { ?>
+                        <strong>Roles</strong> Add
+                    <?php } ?>
                 </div>
                 <div class="panel-body">
                     <div class="help-block">

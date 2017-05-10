@@ -21,7 +21,8 @@ class AppAsset extends AssetBundle
         'theme-assets/css/theme.css',
         'plugins/timepicker/jquery.timepicker.min.css',
         'plugins/fancybox/dist/jquery.fancybox.min.css',
-        'plugins/dropzone/dropzone.css'
+        'plugins/dropzone/dropzone.css',
+        'js/icheck/skins/flat/green.css',
     ];
     public $js = [
         'js/ekko-lightbox-modified.js?v=1482936345',
@@ -42,6 +43,7 @@ class AppAsset extends AssetBundle
         'plugins/fancybox/dist/jquery.fancybox.min.js',
         'plugins/dropzone/dropzone.js',
         'plugins/bootbox/bootbox.min.js',
+        'js/icheck/icheck.js',
         'js/custom.js'
 
     ];

@@ -1,9 +1,9 @@
 <?php
 /**
  * Created by PhpStorm.
- * User: rohan
- * Date: 21/6/16
- * Time: 6:48 PM
+ * User: akshay
+ * Date: 10/5/17
+ * Time: 11:30 PM
  */
 ?>
 
@@ -15,8 +15,8 @@
                 <div class="panel-heading">Manage <strong>Settings</strong></div>
                 <div class="list-group">
                     <a class="list-group-item active" href="<?= Yii::$app->urlManager->createAbsoluteUrl('setting/index') ?>"><i class="fa fa-users"></i><span> System User </span></a>
-                    <a class="list-group-item" href="../roles/roles.html"><i class="fa fa-user"></i><span> Roles </span></a>
-                    <a class="list-group-item" href="javascript:void(0);"><i class="fa fa-user"></i><span> Rights </span></a>
+                    <a class="list-group-item" href="<?= Yii::$app->urlManager->createAbsoluteUrl('setting/roles') ?>"><i class="fa fa-user"></i><span> Roles </span></a>
+                    <a class="list-group-item" href="<?= Yii::$app->urlManager->createAbsoluteUrl('setting/rights') ?>"><i class="fa fa-user"></i><span> Rights </span></a>
                 </div>
             </div>
             <!-- end: list-group navi for large devices -->

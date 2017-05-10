@@ -1,4 +1,11 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: akshay
+ * Date: 10/5/17
+ * Time: 11:30 PM
+ */
+
 namespace backend\controllers;
 use backend\components\CustController;
 use backend\models\Actions;
@@ -13,7 +20,6 @@ use common\models\Role;
 use common\models\form\SystemUserProfileForm;
 use common\models\search\RoleSearch;
 use common\models\search\UserSearch;
-use common\models\StaffUserProfile;
 use common\models\AppUserProfile;
 
 use kartik\form\ActiveForm;
@@ -28,7 +34,7 @@ class SettingController extends CustController
 {
 
     /***
-     * @rohanmashiyava
+     * @Akshaysanagni
      *  List of User(System User)
      *  Who user Admin Panel
      **/
@@ -44,7 +50,7 @@ class SettingController extends CustController
     }
 
     /***
-     * @rohanmashiyava
+     * @AkshaySangani
      *  Add User(System User)
      *  Who user Admin Panel
      **/
@@ -231,7 +237,12 @@ class SettingController extends CustController
         }
     }
 
-     public function actionChangeUserPassword($id){
+    /***
+     * @akshaysangani
+     *  Change change Password of User(System User)
+     *  Who user Admin Panel
+     **/
+    public function actionChangeUserPassword($id){
         $model = new ChangeUserPasswordForm();
         $model->user_id = $id;
         if (Yii::$app->request->isAjax && $model->load(Yii::$app->request->post())) {
@@ -249,7 +260,7 @@ class SettingController extends CustController
                         'type' => 'success',
                         'duration' => 12000,
                         'icon' => 'glyphicon glyphicon-ok-sign',
-                        'message' => 'You have changed your password successfully',
+                        'message' => 'You have changed user password successfully',
                         'title' => 'Password Changed',
                         'positonY' => 'top',
                         'positonX' => 'right'
@@ -261,8 +272,9 @@ class SettingController extends CustController
         }
         return $this->render('change_user_password',['model'=>$model]);
     }
+
     /***
-     * @rohanmashiyava
+     * @akshaysangani
      *  Change Status of User(System User)
      *  Who user Admin Panel
      **/
@@ -278,7 +290,7 @@ class SettingController extends CustController
     }
 
     /***
-     * @rohanmashiyava
+     * @akshaysangani
      *  Lists Roles(System User)
      *  All Roles for system
      **/
@@ -319,7 +331,7 @@ class SettingController extends CustController
         ]);
     }
     /***
-     * @rohanmashiyava
+     * @akshaysangani
      *  Lists Roles(System User)
      *  All Roles for system
      **/
@@ -358,7 +370,7 @@ class SettingController extends CustController
         ]);
     }
     /***
-     * @rohanmashiyava
+     * @akshaysangani
      *  List Roles(System User)
      *   All Roles for system
      **/
@@ -373,7 +385,7 @@ class SettingController extends CustController
     }
 
     /***
-     * @rohanmashiyava
+     * @akshaysangani
      *  Add Roles(System User)
      *  Who user Admin Panel
      **/

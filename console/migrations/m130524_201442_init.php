@@ -5,7 +5,7 @@ use yii\db\Migration;
 class m130524_201442_init extends Migration {
     public function up() {
 
-        $pathOfSQL = dirname( dirname(__FILE__))."/data/db-vanilla-schema.sql";
+        $pathOfSQL = dirname( dirname(__FILE__))."/data/default_table.sql";
         if(file_exists($pathOfSQL)) {
             //$tempsql = file_get_contents($pathOfSQL);
             $templine = '';

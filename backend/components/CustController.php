@@ -64,7 +64,7 @@ class CustController extends Controller
         if ($controller) {
             $action = Actions::find()->where(['action_name' => $action->id, 'controller_id' => $controller->id])->one();
             if ($action) {
-                Yii::$app->userActivity->add($this->record, $action->activity_value);
+             //   Yii::$app->userActivity->add($this->record, $action->activity_value);
 
             }
         }
