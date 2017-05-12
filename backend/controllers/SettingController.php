@@ -61,13 +61,16 @@ class SettingController extends CustController
             return ActiveForm::validate($model);
         }
         if (Yii::$app->request->post() && $model->load(Yii::$app->request->post())) {
+
             $transaction = Yii::$app->db->beginTransaction();
             $profile = new AppUserProfile();
             $profile->first_name = $model->first_name;
             $profile->last_name = $model->last_name;
             $profile->full_name = $model->first_name . " " . $model->last_name;
             $profile->email = $model->email;
+            $profile->date_of_birth = $model->date_of_birth;
             $profile->phone_no = $model->phone_no;
+            $profile->gender = $model->gender;
             $profile->is_deleted = NOT_DELETED;
             $profile->created_by = Yii::$app->user->identity->id;
             $profile->updated_by = Yii::$app->user->identity->id;
@@ -88,7 +91,7 @@ class SettingController extends CustController
                 $user->setPassword(DEFAULT_PASSWORD);
                 $user->profile_id = $profile->id;
                 $user->password_reset_token = $user->generatePasswordResetToken();
-                $user->role_id = Yii::$app->user->identity->id;
+                $user->role_id = $model->role;
                 $user->screenlock = 0;
                 $user->status = ACTIVE;
                 $user->created_at = time();
@@ -173,6 +176,7 @@ class SettingController extends CustController
                 $profile->save(false);
 
                 $user->attributes = $model->attributes;
+                $user->role_id = $model->role;
                 $user->updated_at = time();
 
                 if ($user->validate()) {
