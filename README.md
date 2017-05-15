@@ -1,11 +1,7 @@
 # **Default Application for Yii2** #
-===============================
-
 By Theta Technolabs
 
-===============================
-
-This is Yii2 start application template.
+Yii2 start application template.
 
 It was created and developing as a fast start for building an advanced site based on Yii2.
 
