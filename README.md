@@ -1,4 +1,4 @@
-Default Application for Yii2
+# **Default Application for Yii2** #
 ===============================
 
 By Theta Technolabs
@@ -11,7 +11,7 @@ It was created and developing as a fast start for building an advanced site base
 
 It covers typical use cases for a new project and will help you not to waste your time doing the same work in every project
 
-# Setup Project #
+# **Setup Project** #
 
 * Step 1 :- git clone <repository link> <directory name>
 * Step 2 :- cd <directory name> and open Terminal
