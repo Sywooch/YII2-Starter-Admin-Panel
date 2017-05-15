@@ -3,9 +3,11 @@ By Theta Technolabs
 
 Yii2 start application template.
 
-It was created and developing as a fast start for building an advanced site based on Yii2.
+It was created and developing as a fast start for building an advanced template based on Yii2.
 
-It covers typical use cases for a new project and will help you not to waste your time doing the same work in every project
+It's Bootstrapping your day-to-day activity/functionality of project development.
+
+Credit: https://github.com/yiisoft/yii2-app-advanced
 
 # **Setup Project** #
 
