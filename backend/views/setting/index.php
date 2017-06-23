@@ -77,24 +77,26 @@ use yii\widgets\Pjax;
                                         'template' => ' {view} {update} {status} ',
                                         'buttons' => [
                                             'status' => function ($url, $model) {
-                                                if($model->status == ACTIVE && $model->role->id != SUPER_ADMIN){
-                                                    return Html::a('<i class="fa fa-times"></i>', $url,
-                                                        [
-                                                            'class'          => 'ajaxStatus btn btn-danger btn-xs tt',
-                                                            'title' => Yii::t('app', 'Status'),
-                                                            'status-url'     => $url,
-                                                            'pjax-container' => 'users',
-                                                            'data-pjax'=>'w0',
-                                                        ]);
-                                                }else{
-                                                    return Html::a('<i class="fa fa-check"></i>', $url,
-                                                        [
-                                                            'class'          => 'ajaxStatus btn btn-success btn-xs tt',
-                                                            'title' => Yii::t('app', 'Status'),
-                                                            'data-pjax'=>'w0',
-                                                            'status-url'     => $url,
-                                                            'pjax-container' => 'users',
-                                                        ]);
+                                                if($model->role->id != SUPER_ADMIN){
+                                                    if($model->status == ACTIVE){
+                                                        return Html::a('<i class="fa fa-times"></i>', $url,
+                                                            [
+                                                                'class'          => 'ajaxStatus btn btn-danger btn-xs tt',
+                                                                'title' => Yii::t('app', 'Status'),
+                                                                'status-url'     => $url,
+                                                                'pjax-container' => 'users',
+                                                                'data-pjax'=>'w0',
+                                                            ]);
+                                                    }else{
+                                                        return Html::a('<i class="fa fa-check"></i>', $url,
+                                                            [
+                                                                'class'          => 'ajaxStatus btn btn-success btn-xs tt',
+                                                                'title' => Yii::t('app', 'Status'),
+                                                                'data-pjax'=>'w0',
+                                                                'status-url'     => $url,
+                                                                'pjax-container' => 'users',
+                                                            ]);
+                                                    }
                                                 }
 
                                             },
