@@ -46,7 +46,7 @@
                             <div class="col-md-12">
                                 <div class="controls controls-header pull-right">
                                     <a class="btn btn-primary edit-account"
-                                       href="<?php echo Yii::$app->urlManager->createAbsoluteUrl('user/edit-profile')?>"><i class="fa fa-edit"></i> Edit account</a></div>
+                                       href="javascript:void(0);"><i class="fa fa-edit"></i> Edit account</a></div>
                             </div>
                         </div>
                     </div>
