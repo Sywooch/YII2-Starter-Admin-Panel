@@ -77,7 +77,7 @@ use yii\widgets\Pjax;
                                         'template' => ' {view} {update} {status} ',
                                         'buttons' => [
                                             'status' => function ($url, $model) {
-                                                if($model->status == ACTIVE && $model->role != SUPER_ADMIN){
+                                                if($model->status == ACTIVE && $model->role->id != SUPER_ADMIN){
                                                     return Html::a('<i class="fa fa-times"></i>', $url,
                                                         [
                                                             'class'          => 'ajaxStatus btn btn-danger btn-xs tt',
