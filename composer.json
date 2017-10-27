@@ -42,8 +42,7 @@
         "sjaakp/yii2-alphapager": "*",
         "bryglen/yii2-sendgrid": "*",
         "kartik-v/yii2-widget-rating": "*",
-        "karpoff/yii2-crop-image-upload": "*",
-        "bedezign/yii2-audit": "^1.0"
+        "karpoff/yii2-crop-image-upload": "*"
 
     },
     "require-dev": {
